@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>이미지 분석</title>
+</head>
+<body>
+    <h1>이미지 분석</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="분석">
+    </form>
+    {% if image_path %}
+    <h2>업로드된 이미지:</h2>
+    <img src="{{ image_path }}" width="400">
+    {% endif %}
+    {% if result %}
+    <h2>분석 결과:</h2>
+    <p>{{ result | safe }}</p>
+    {% endif %}
+</body>
+</html>
